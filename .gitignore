@@ -5,6 +5,9 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+#Ignore these directories
+Projeto/build
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
@@ -41,3 +44,4 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/Projeto/dist/
