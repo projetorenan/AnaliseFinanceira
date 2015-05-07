@@ -6,8 +6,8 @@ ehthumbs.db
 Desktop.ini
 
 #Ignore these directories
-Projeto/build
-
+Projeto/build/
+build/
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
