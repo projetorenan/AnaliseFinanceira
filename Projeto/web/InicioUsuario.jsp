@@ -90,7 +90,7 @@
                 </aside>
                 
                 <aside class="span9">
-                    <form name="formulario" action="Lv1-Passo1.jsp" class="form-horizontal" method ="post" onSubmit="return Cadastro ();">
+                    <form name="formulario" action="EscolhaNiveis.jsp" class="form-horizontal" method ="post" onSubmit="return Cadastro ();">
                 	<div class="control-group">
                 		<label class="control-label">Login: </label>
                 		<div class="controls">

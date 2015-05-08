@@ -30,6 +30,16 @@ else
 
         Lv1p4DAO dao = new Lv1p4DAO();
         dao.inserir(lv1p4);
+        
+%>
+<%
+    Double receita, area, osdois;
+    String msg;
+    
+    receita = Double.parseDouble((String)request.getParameter("bovinosanual"));
+    area = Double.parseDouble((String)request.getParameter("areapecuaria"));
+    osdois = receita / area;
+    msg = osdois.toString();
 %>
 <!DOCTYPE html>
 <html>
@@ -135,7 +145,7 @@ else
                         <div class="control-group">
                             <label class="control-label">Receita por Hectare:</label>
                 		<div class="controls">
-                			<input type="text" name="receitahectare"  class="uneditable-input">
+                			<input type="text" name="receitahectare"  class="uneditable-input" value="<%=msg%>">
                                         <span class="help-inline">R$/Hectare</span>
                 		</div>
                         </div>
