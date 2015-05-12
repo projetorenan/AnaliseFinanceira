@@ -4,6 +4,8 @@
     Author     : Aluno
 --%>
 
+<%@page import="modelo.Calculos"%>
+<%@page import="modelo.Passos"%>
 <%@page import="dao.Lv1p2DAO"%>
 <%@page import="modelo.Lv1p2"%>
 <%@page import="modelo.Usuario"%>
@@ -12,13 +14,18 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     Usuario u = new Usuario();
-    if (session.getAttribute("Usuario") != null) {
-        u = (Usuario) session.getAttribute("Usuario");
-
-    } else {
-        response.sendRedirect("InicioUsuario.jsp");
-    }
-
+    Passos p = new Passos();
+if(session.getAttribute("Usuario")!=null)
+{
+     u = (Usuario)session.getAttribute("Usuario");
+     p = (Passos)session.getAttribute("Passos");
+    
+}
+else
+{
+    response.sendRedirect("InicioUsuario.jsp"); 
+}
+    
 %>
 
 <%    
@@ -46,6 +53,27 @@
 
     Lv1p2DAO dao = new Lv1p2DAO();
     dao.inserir(e);
+    p.setLv1p2(e);
+   
+    
+    
+    
+    /* if(bovinos > 0)
+        {   
+            lotm = bovino / areapec;
+            percentual = (bovinocria * 100) / bovino;     
+        }
+        else
+        {
+            float total = vacadecria + vacasdedescarte + terneiro + terneira + novilhos1 + novilhas1 + novilhos2 + novilhas2 + novilhos3 + touros;
+            lotm = total / areapec;
+            percentual = ((vacadecria + touros + novilhas1 + novilhas2 + terneiro + terneira) * 100) / total;
+        }
+        
+        //Passo3
+        float bovinosano = Float.parseFloat(request.getParameter("bovinosanual"));
+        
+        float areamedia = bovinosano / areapec;*/
 %>
 <!DOCTYPE html>
 <html>

@@ -66,13 +66,6 @@ Integer passo  = Integer.parseInt(request.getParameter("passo"));
                     <span class="help-inline">R$/Hectare</span>
              </h6>
             </div>
-            <div class="control-group">
-                <label class="control-label"><h6><b>Custo de Produção por Terneiro(a) Desmamado:</b>
-               
-                    <span id="g">000.00</span>
-                    <span class="help-inline">R$/Terneiro(a)</span>
-                </h6>
-            </div>
             <%
                 }
             %>

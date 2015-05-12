@@ -4,6 +4,7 @@
     Author     : big
 --%>
 
+<%@page import="modelo.Passos"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.UsuarioDAO"%>
 <%@page import="modelo.Usuario"%>
@@ -14,6 +15,7 @@
     usuario.setLogin("Renan");
     
     session.setAttribute("Usuario", usuario);
+    session.setAttribute("Passos", new Passos());
 %>
 <!DOCTYPE html>
 <html>

@@ -53,14 +53,14 @@
         </nav>
 
         <header class="page-header"></header>
-
+        <br/>
         <div class="container-fluid">
             <div class="row-fluid"> 
                 <aside class="span4"></aside>
                 <aside class="span8"><h1>Escolha um Nivel</h1><br/><br/></aside>
             </div>
         </div>
-        <br/><br/><br/><br/>
+        <br/><br/><br/>
 
         <div class="container-fluid">
             <div class="row-fluid">
@@ -68,13 +68,18 @@
                 <aside class="span2">
                 </aside>
 
-                <aside class="span10">
-                    <ul>
-                        <li><a href="Lv1-Passo1.jsp"> Nivel 1 </a></li>
-                        <li><a href="Lv2-Passo1.jsp"> Nivel 2 </a></li>
-                        <li><a href=""> Nivel 3 </a></li>
-                        <li><a href=""> Nivel 4 </a></li>
-                    </ul>
+                <aside class="span8">
+                    <table class="table table-bordered table-hover">
+                        <tr class="info">
+                            <td><a href="Lv1-Passo1.jsp"> Nivel 1 </a></td>
+                            <td><a href="Lv2-Passo1.jsp"> Nivel 2 </a></td>
+                            <td><a href=""> Nivel 3 </a></td>
+                            <td><a href=""> Nivel 4 </a></td>
+                        </tr>
+                    </table>
+                </aside>
+                
+                <aside class="span2">
                 </aside>
 
             </div><h2></h2>
