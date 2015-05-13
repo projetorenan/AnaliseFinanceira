@@ -4,6 +4,7 @@
     Author     : Aluno
 --%>
 
+<%@page import="modelo.Passos"%>
 <%@page import="modelo.Lv2p2"%>
 <%@page import="dao.Lv2p2DAO"%>
 <%@page import="modelo.Usuario"%>
@@ -12,9 +13,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     Usuario u = new Usuario();
+    Passos p = new Passos();
 if(session.getAttribute("Usuario")!=null)
 {
      u = (Usuario)session.getAttribute("Usuario");
+     p = (Passos)session.getAttribute("Passos");
     
 }
 else
@@ -67,7 +70,8 @@ else
         b.setTourooutdez(Integer.parseInt(request.getParameter("touros4")));
 
         Lv2p2DAO dao = new Lv2p2DAO();
-        dao.inserir(b); 
+        dao.inserir(b);
+        p.setLv2p2(b);
 %>
 <!DOCTYPE html>
 <html>

@@ -4,6 +4,7 @@
     Author     : Aluno
 --%>
 
+<%@page import="modelo.Passos"%>
 <%@page import="dao.Lv2p1DAO"%>
 <%@page import="modelo.Lv2p1"%>
 <%@page import="modelo.Usuario"%>
@@ -11,10 +12,12 @@
 <%@page import="modelo.Lv2p2"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    Usuario u = new Usuario();
+   Usuario u = new Usuario();
+    Passos p = new Passos();
 if(session.getAttribute("Usuario")!=null)
 {
      u = (Usuario)session.getAttribute("Usuario");
+     p = (Passos)session.getAttribute("Passos");
     
 }
 else
@@ -40,7 +43,8 @@ else
         
 
         Lv2p1DAO dao = new Lv2p1DAO();
-        dao.inserir(a); 
+        dao.inserir(a);
+        p.setLv2p1(a);
 %>
 <!DOCTYPE html>
 <html>

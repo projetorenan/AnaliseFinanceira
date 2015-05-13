@@ -4,6 +4,7 @@
     Author     : Aluno
 --%>
 
+<%@page import="modelo.Passos"%>
 <%@page import="modelo.Lv2p3"%>
 <%@page import="dao.Lv2p3DAO"%>
 <%@page import="modelo.Usuario"%>
@@ -11,10 +12,12 @@
 <%@page import="modelo.Lv2p4"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    Usuario u = new Usuario();
+   Usuario u = new Usuario();
+    Passos p = new Passos();
 if(session.getAttribute("Usuario")!=null)
 {
      u = (Usuario)session.getAttribute("Usuario");
+     p = (Passos)session.getAttribute("Passos");
     
 }
 else
@@ -49,7 +52,8 @@ else
         c.setTourovalor(Double.parseDouble(request.getParameter("touros2")));
 
         Lv2p3DAO dao = new Lv2p3DAO();
-        dao.inserir(c); 
+        dao.inserir(c);
+        p.setLv2p3(c);
 %>
 <!DOCTYPE html>
 <html>

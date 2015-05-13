@@ -15,14 +15,14 @@ Integer passo  = Integer.parseInt(request.getParameter("passo"));
             <div class="control-group">
                 <label class="control-label"><h6><b>Rebanho com atividade de Cria:</b>
                 
-                    <span id="a">000.00</span>
+                    <span id="a"></span>
                     <span class="help-inline">%</span>
                 </h6>
             </div>
             <div class="control-group">
                 <label class="control-label"><h6><b>Lotação Média da Propriedade:</b>
                 
-                    <span id="b">000.00</span>
+                    <span id="b"></span>
                     <span class="help-inline">Cabeça(s) por hectare</span>
                     </h6>
             </div>

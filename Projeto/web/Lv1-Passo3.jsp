@@ -54,26 +54,7 @@ else
     Lv1p2DAO dao = new Lv1p2DAO();
     dao.inserir(e);
     p.setLv1p2(e);
-   
-    
-    
-    
-    /* if(bovinos > 0)
-        {   
-            lotm = bovino / areapec;
-            percentual = (bovinocria * 100) / bovino;     
-        }
-        else
-        {
-            float total = vacadecria + vacasdedescarte + terneiro + terneira + novilhos1 + novilhas1 + novilhos2 + novilhas2 + novilhos3 + touros;
-            lotm = total / areapec;
-            percentual = ((vacadecria + touros + novilhas1 + novilhas2 + terneiro + terneira) * 100) / total;
-        }
-        
-        //Passo3
-        float bovinosano = Float.parseFloat(request.getParameter("bovinosanual"));
-        
-        float areamedia = bovinosano / areapec;*/
+
 %>
 <!DOCTYPE html>
 <html>

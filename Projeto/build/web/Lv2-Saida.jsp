@@ -4,15 +4,18 @@
     Author     : Aluno
 --%>
 
+<%@page import="modelo.Passos"%>
 <%@page import="dao.Lv2p4DAO"%>
 <%@page import="modelo.Lv2p4"%>
 <%@page import="modelo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    Usuario u = new Usuario();
+   Usuario u = new Usuario();
+    Passos p = new Passos();
 if(session.getAttribute("Usuario")!=null)
 {
      u = (Usuario)session.getAttribute("Usuario");
+     p = (Passos)session.getAttribute("Passos");
     
 }
 else
@@ -45,7 +48,8 @@ else
         d.setOutradespesas(Double.parseDouble(request.getParameter("outras")));
 
         Lv2p4DAO dao = new Lv2p4DAO();
-        dao.inserir(d); 
+        dao.inserir(d);
+        p.setLv2p4(d);
 %>
 <!DOCTYPE html>
 <html>
@@ -135,7 +139,7 @@ else
                         <div class="control-group">
                             <label class="control-label">Área Média da Pecuária:</label>
                 		<div class="controls">
-                		    <input type="text" name="areamedia" class="uneditable-input">
+                                    <input type="text" name="areamedia" class="uneditable-input" value="<%=p.areamedia()%>">
                                     <span class="help-inline">Hectare</span>
                 		</div>
                         </div>
@@ -143,7 +147,7 @@ else
                             <label class="control-label">Área Aproveitável da propriedade:</label>
                 		<div class="controls">
                                     <br/>
-                			<input type="text" name="areaaproveitavel" class="uneditable-input">
+                                    <input type="text" name="areaaproveitavel" class="uneditable-input" value="<%=p.areaaproveitavel()%>">
                                         <span class="help-inline">Hectare</span>
                 		</div>
                         </div>
@@ -151,7 +155,7 @@ else
                             <label class="control-label">Percentual do Rebanho com atividade de Cria:</label>
                 		<div class="controls">
                                     <br/>
-                		    <input type="text" name="percentualrebanho" class="uneditable-input">
+                		    <input type="text" name="percentualrebanho" class="uneditable-input" value="<%=p.percentualrebanhocomcria()%>">
                                     <span class="help-inline">%</span>
                 		</div>
                         </div>
@@ -159,7 +163,7 @@ else
                             <label class="control-label">Lotação Média da Propriedade:</label>
                 		<div class="controls">
                                     <br/>
-                			<input type="text" name="lotaçaomedia"  class="uneditable-input">
+                			<input type="text" name="lotaçaomedia"  class="uneditable-input" value="<%=p.lotacaomedia2()%>">
                                         <span class="help-inline">Cabeça(s) por hectare</span>
                 		</div>
                         </div>
@@ -167,14 +171,14 @@ else
                             <label class="control-label">Receita Total das Atividades:</label>
                 		<div class="controls">
                                     <br/>
-                			<input type="text" name="receitaatividades"  class="uneditable-input">
+                			<input type="text" name="receitaatividades"  class="uneditable-input" value="<%=p.totalreceita()%>">
                                         <span class="help-inline">R$</span>     
                 		</div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">Receita por Hectare:</label>
                 		<div class="controls">
-                			<input type="text" name="receitahectare"  class="uneditable-input">
+                			<input type="text" name="receitahectare"  class="uneditable-input" value="<%=p.receitahectar2()%>">
                                         <span class="help-inline">R$/Hectare</span>
                 		</div>
                         </div>
@@ -182,7 +186,7 @@ else
                             <label class="control-label">Total dos Custos de Produção:</label>
                 		<div class="controls">
                                         <br/>
-                			<input type="text" name="totalproduçao"  class="uneditable-input">
+                                        <input type="text" name="totalproduçao"  class="uneditable-input" value="<%=p.custotalproducao()%>">
                                         <span class="help-inline">R$</span>
                 		</div>
                         </div>
@@ -190,7 +194,7 @@ else
                             <label class="control-label">Custo de Atividade de Cria:</label>
                 		<div class="controls">
                                     <br/>
-                			<input type="text" name="custocria"  class="uneditable-input">
+                			<input type="text" name="custocria"  class="uneditable-input" value="<%=p.custoatividadecria1()%>">
                                         <span class="help-inline">R$</span>
                 		</div>
                         </div>
@@ -198,7 +202,7 @@ else
                             <label class="control-label">Custo de Produção por Hectar:</label>
                 		<div class="controls">
                                     <br/>
-                			<input type="text" name="custohectar"  class="uneditable-input">
+                			<input type="text" name="custohectar"  class="uneditable-input" value="<%=p.custoproducaohectar1()%>">
                                         <span class="help-inline">R$/Hectare</span>
                 		</div>
                         </div>
@@ -206,7 +210,7 @@ else
                             <label class="control-label">Custo de Produção por Terneiro(a) Desmamado:</label>
                 		<div class="controls">
                                     <br/>
-                			<input type="text" name="custodesmamado"  class="uneditable-input">
+                                    <input type="text" name="custodesmamado"  class="uneditable-input" value="<%=p.custoterneiro()%>">
                                         <span class="help-inline">R$/Terneiro(a)</span>
                 		</div>
                         </div>

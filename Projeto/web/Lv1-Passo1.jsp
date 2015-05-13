@@ -4,6 +4,7 @@
     Author     : Aluno
 --%>
 
+<%@page import="modelo.Passos"%>
 <%@page import="modelo.Usuario"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.Lv1p1DAO"%>
@@ -11,10 +12,12 @@
 
 
 <%
-    Usuario u = new Usuario();
+   Usuario u = new Usuario();
+    Passos p = new Passos();
 if(session.getAttribute("Usuario")!=null)
 {
      u = (Usuario)session.getAttribute("Usuario");
+     p = (Passos)session.getAttribute("Passos");
     
 }
 else
@@ -23,6 +26,8 @@ else
 }
     
 %>
+    
+
 <!DOCTYPE html>
 <html>
     <head>
