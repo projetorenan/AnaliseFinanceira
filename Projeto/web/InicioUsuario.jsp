@@ -4,18 +4,36 @@
     Author     : big
 --%>
 
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="modelo.Passos"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.UsuarioDAO"%>
 <%@page import="modelo.Usuario"%>
 <%
-    Usuario usuario = new Usuario();
-    
-    usuario.setId(1);
-    usuario.setLogin("Renan");
-    
-    session.setAttribute("Usuario", usuario);
-    session.setAttribute("Passos", new Passos());
+    if(request.getParameter("login")!=null)
+    {
+        Usuario usuario = new Usuario();
+
+        
+        usuario.setLogin(request.getParameter("login"));
+        usuario.setSenha(request.getParameter("senha"));
+        
+        UsuarioDAO dao = new UsuarioDAO();
+        
+        
+
+        session.setAttribute("Usuario", usuario);
+        session.setAttribute("Passos", new Passos());
+        
+        //redirecionar para a tela de escolha de níveis
+        response.sendRedirect("EscolhaNiveis.jsp");
+    }
+    else
+    {
+        JOptionPane.showMessageDialog(cmpnt, "Login ou Senha Incorretos");
+        
+        
+    }
 %>
 <!DOCTYPE html>
 <html>
@@ -92,7 +110,7 @@
                 </aside>
                 
                 <aside class="span9">
-                    <form name="formulario" action="EscolhaNiveis.jsp" class="form-horizontal" method ="post" onSubmit="return Cadastro ();">
+                    <form name="formulario" action="InicioUsuario.jsp" class="form-horizontal" method ="post" onSubmit="return Cadastro ();">
                 	<div class="control-group">
                 		<label class="control-label">Login: </label>
                 		<div class="controls">

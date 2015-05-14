@@ -5,9 +5,11 @@
         <group>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/bootstrap/resultado.jsp</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/Lv1-Passo4.jsp</file>
+            <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/CadastroUsuario.jsp</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/Lv2-Saida.jsp</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/InicioUsuario.jsp</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/Inicio.jsp</file>
+            <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/src/java/dao/UsuarioDAO.java</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/bootstrap/index.html</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/src/java/modelo/Lv1p4.java</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/Lv2-Passo4.jsp</file>
@@ -16,6 +18,8 @@
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/Lv2-Passo2.jsp</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/EscolhaNiveis.jsp</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/src/java/modelo/Passos.java</file>
+            <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/bootstrap/mostraesconde.jsp</file>
+            <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/FimCadastroUsuario.jsp</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/Lv1-Passo2.jsp</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/Lv2-Passo3.jsp</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/AnaliseFinanceira/Projeto/web/Lv1-Saida.jsp</file>
