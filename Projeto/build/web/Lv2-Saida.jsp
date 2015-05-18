@@ -38,10 +38,10 @@ else
         d.setSemente(Double.parseDouble(request.getParameter("sementes")));
         d.setDefensivoagriparapastagem(Double.parseDouble(request.getParameter("defensivospastagens")));
         d.setAdubosparapastagem(Double.parseDouble(request.getParameter("adubos")));
-        d.setCombustivel(Double.parseDouble(request.getParameter("combustivel")));
+        d.setCombustivel(Double.parseDouble(request.getParameter("combustiveis")));
         d.setReparosmaquina(Double.parseDouble(request.getParameter("reparomaquinas")));
-        d.setReparobanfeitoria(Double.parseDouble(request.getParameter("reparobemfeitorias")));
-        d.setFrete(Double.parseDouble(request.getParameter("frete")));
+        d.setReparobanfeitoria(Double.parseDouble(request.getParameter("reparosbemfeitorias")));
+        d.setFrete(Double.parseDouble(request.getParameter("fretes")));
         d.setArrendamentocamponativo(Double.parseDouble(request.getParameter("arrendamentosnativo")));
         d.setArrendamentopastagemcultivada(Double.parseDouble(request.getParameter("arrendamentoscultivadas")));
         d.setImposto(Double.parseDouble(request.getParameter("impostos")));

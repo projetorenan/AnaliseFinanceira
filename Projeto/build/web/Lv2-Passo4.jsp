@@ -30,24 +30,34 @@ else
         Lv2p3 c = new Lv2p3();
         c.setTerneiroquant(Integer.parseInt(request.getParameter("terneiros1")));
         c.setTerneirovalor(Double.parseDouble(request.getParameter("terneiros2")));
+        
         c.setTerneiraquant(Integer.parseInt(request.getParameter("terneiras1")));
         c.setTerneiravalor(Double.parseDouble(request.getParameter("terneiras2")));
+        
         c.setNovilhaquant(Integer.parseInt(request.getParameter("novilhas1")));
         c.setNovilhavalor(Double.parseDouble(request.getParameter("novilhas2")));
+        
         c.setVacadedescartequant(Integer.parseInt(request.getParameter("vacdescarte1")));
         c.setVacadedescartevalor(Double.parseDouble(request.getParameter("vacdescarte2")));
+        
         c.setVacaprenhasquant(Integer.parseInt(request.getParameter("vacprenha1")));
         c.setVacaprenhavalor(Double.parseDouble(request.getParameter("vacprenha2")));
+        
         c.setVacacomcriaquant(Integer.parseInt(request.getParameter("vaccria1")));
         c.setVacacomcriavalor(Double.parseDouble(request.getParameter("vaccria2")));
+        
         c.setVacagordaquant(Integer.parseInt(request.getParameter("vacgorda1")));
         c.setVacagordavalor(Double.parseDouble(request.getParameter("vacgorda2")));
+        
         c.setNovilhorecriaquant(Integer.parseInt(request.getParameter("novilhosrecria1")));
         c.setNovilhorecriavalor(Double.parseDouble(request.getParameter("novilhosrecria2")));
+        
         c.setNovilhogordoquant(Integer.parseInt(request.getParameter("novilhosgordos1")));
         c.setNovilhogordovalor(Double.parseDouble(request.getParameter("novilhosgordos2")));
+        
         c.setTorunosquant(Integer.parseInt(request.getParameter("torunos1")));
         c.setTorunovalor(Double.parseDouble(request.getParameter("torunos2")));
+        
         c.setTouroquant(Integer.parseInt(request.getParameter("touros1")));
         c.setTourovalor(Double.parseDouble(request.getParameter("touros2")));
 

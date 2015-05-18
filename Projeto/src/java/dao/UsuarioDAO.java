@@ -122,12 +122,12 @@ public class UsuarioDAO {
         
     }
     
-    public Usuario login()
+    public Usuario login(Usuario usuario) 
     {
         
         //crio a lista de jogadores
         
-       Usuario usuario = null;
+        usuario = null;
         String sql = "SELECT * FROM usuario WHERE login =? AND senha=?";
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
         

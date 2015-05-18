@@ -29,6 +29,7 @@ else
 <%
         Lv1p3 lv1p3 = new Lv1p3();
         lv1p3.setReceita_anual(Double.parseDouble(request.getParameter("bovinosanual")));
+        lv1p3.setUsuario_id(u.getId());
 
         Lv1p3DAO dao = new Lv1p3DAO();
         dao.inserir(lv1p3);

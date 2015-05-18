@@ -20,10 +20,10 @@ import modelo.Lv1p1;
  * @author Lucas
  */
 public class Lv1p1DAO {
-     public Boolean inserir (Lv1p1 lv1p1)
+     public Boolean inserir(Lv1p1 lv1p1)
     {
         
-        Boolean retorno = false;
+        Boolean retorno;
         //Mostra o sql de insert da tabela
         String sql = "INSERT INTO lv1p1 (area_apro,usuario_id)" +
                 "VALUES (?,?)";
@@ -36,17 +36,19 @@ public class Lv1p1DAO {
         
         //Executa o sql no bancod de dados
         pst.executeUpdate();
-                retorno = true;
+        
+        retorno = true;
        }
        
        catch(Exception ex)
        {
            ex.printStackTrace();
+           
            retorno = false;
        }
         
+       
        return retorno;
- 
     }
      
       public Boolean excluir(Lv1p1 lv1p1){

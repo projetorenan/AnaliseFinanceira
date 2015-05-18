@@ -49,7 +49,7 @@ else
     e.setNovilho36(Integer.parseInt(request.getParameter("novilhos3")));
     e.setTouro(Integer.parseInt(request.getParameter("touros")));
     }
-    
+    e.setUsuario_id(u.getId());
 
     Lv1p2DAO dao = new Lv1p2DAO();
     dao.inserir(e);

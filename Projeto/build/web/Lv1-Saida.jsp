@@ -33,6 +33,7 @@ else
         lv1p4.setMao_de_obra(Double.parseDouble(request.getParameter("maodeobra")));
         lv1p4.setMaquinas(Double.parseDouble(request.getParameter("maquinas")));
         lv1p4.setPastagem(Double.parseDouble(request.getParameter("dispesas")));
+        lv1p4.setUsuario_id(u.getId());
 
         Lv1p4DAO dao = new Lv1p4DAO();
         dao.inserir(lv1p4);

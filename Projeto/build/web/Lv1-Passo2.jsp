@@ -4,6 +4,8 @@
     Author     : Aluno
 --%>
 
+
+
 <%@page import="modelo.Passos"%>
 <%@page import="dao.Lv1p1DAO"%>
 <%@page import="modelo.Lv1p1"%>
@@ -29,6 +31,7 @@ else
 <%
         Lv1p1 lv1p1 = new Lv1p1();
         lv1p1.setArea_apro(Double.parseDouble(request.getParameter("areapecuaria")));
+        lv1p1.setUsuario_id(u.getId());
         
 
         Lv1p1DAO dao = new Lv1p1DAO();

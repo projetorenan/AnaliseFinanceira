@@ -19,7 +19,7 @@
         usuario.setSenha(request.getParameter("senha"));
         
         UsuarioDAO dao = new UsuarioDAO();
-        
+        dao.login(usuario);
         
 
         session.setAttribute("Usuario", usuario);
@@ -27,12 +27,6 @@
         
         //redirecionar para a tela de escolha de níveis
         response.sendRedirect("EscolhaNiveis.jsp");
-    }
-    else
-    {
-        JOptionPane.showMessageDialog(cmpnt, "Login ou Senha Incorretos");
-        
-        
     }
 %>
 <!DOCTYPE html>
