@@ -10,6 +10,7 @@
 <%@page import="dao.UsuarioDAO"%>
 <%@page import="modelo.Usuario"%>
 <%
+     String  msg="";
     if(request.getParameter("login")!=null)
     {
         Usuario usuario = new Usuario();
@@ -19,14 +20,22 @@
         usuario.setSenha(request.getParameter("senha"));
         
         UsuarioDAO dao = new UsuarioDAO();
-        dao.login(usuario);
-        
-
-        session.setAttribute("Usuario", usuario);
+        usuario = dao.login(usuario);
+       
+        if(usuario != null)
+        {
+            session.setAttribute("Usuario", usuario);
         session.setAttribute("Passos", new Passos());
         
         //redirecionar para a tela de escolha de níveis
         response.sendRedirect("EscolhaNiveis.jsp");
+        }
+        else
+        {
+            msg = "Login e/ou senha invãidos";
+        }
+
+        
     }
 %>
 <!DOCTYPE html>
@@ -104,7 +113,10 @@
                 </aside>
                 
                 <aside class="span9">
-                    <form name="formulario" action="InicioUsuario.jsp" class="form-horizontal" method ="post" onSubmit="return Cadastro ();">
+                    <form name="formulario" action="index.jsp" class="form-horizontal" method ="post" onSubmit="return Cadastro ();">
+                        <div class="control-group">
+                            <label class="danger"><%=msg%></label>
+                        </div>
                 	<div class="control-group">
                 		<label class="control-label">Login: </label>
                 		<div class="controls">

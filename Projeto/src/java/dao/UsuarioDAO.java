@@ -122,16 +122,18 @@ public class UsuarioDAO {
         
     }
     
-    public Usuario login(Usuario usuario) 
+    public Usuario login(Usuario usuarioE) 
     {
         
         //crio a lista de jogadores
         
-        usuario = null;
+        Usuario usuario = null;
         String sql = "SELECT * FROM usuario WHERE login =? AND senha=?";
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
         
         try {
+            pst.setString(1, usuarioE.getLogin());
+            pst.setString(2, usuarioE.getSenha());
             //Executo o aql e jogo em um resultSet
             ResultSet res = pst.executeQuery();
             //Eqaunto tiver REGISTRO eu vou relacionar
