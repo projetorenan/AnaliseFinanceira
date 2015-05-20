@@ -18,7 +18,7 @@ public class Lv2p3DAO {
         
         Boolean retorno = false;
         //Mostra o sql de insert da tabela
-        String sql = "INSERT INTO lv2p1 (terneiros_quant,terneiros_valor,terneiras_quant,terneiras_valor,"
+        String sql = "INSERT INTO lv2p3 (terneiros_quant,terneiros_valor,terneiras_quant,terneiras_valor,"
                 + "novilha_quant,novilha_valor,vacas_de_descarte_quant,vacas_de_descarte_valor,"
                 + "vaca_prenha_quant,vaca_prenha_valor,vaca_com_cria_quant,vaca_com_cria_valor,vaca_gorda_quant,"
                 + "vaca_gorda_valor,novilho_pra_recria_quant,novilho_pra_recria_valor,novilho_gordo_quant,"
@@ -91,7 +91,7 @@ public class Lv2p3DAO {
    
     public Boolean atualizar(Lv2p3 lv2p3){
         Boolean retorno = false;
-        String sql = "UPDATE lv2p2 SET terneiros_quant=?,terneiros_valor=?,terneiras_quant=?,terneiras_valor=?,"
+        String sql = "UPDATE lv2p3 SET terneiros_quant=?,terneiros_valor=?,terneiras_quant=?,terneiras_valor=?,"
                 + "novilha_quant=?,novilha_valor=?,vacas_de_descarte_quant=?,vacas_de_descarte_valor=?,"
                 + "vaca_prenha_quant=?,vaca_prenha_valor=?,vaca_com_cria_quant=?,vaca_com_cria_valor=?,vaca_gorda_quant=?,"
                 + "vaca_gorda_valor=?,novilho_pra_recria_quant=?,novilho_pra_recria_valor=?,novilho_gordo_quant=?,"
@@ -145,7 +145,7 @@ public class Lv2p3DAO {
         //crio a lista de jogadores
         
         List<Lv2p3> lista = new ArrayList<Lv2p3>();
-        String sql = "SELECT * FROM lv1p2";
+        String sql = "SELECT * FROM lv2p3";
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
         
         try {
