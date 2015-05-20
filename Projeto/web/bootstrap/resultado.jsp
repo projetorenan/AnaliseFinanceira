@@ -1,5 +1,7 @@
+<%@page import="modelo.Passos"%>
 <%
 Integer passo  = Integer.parseInt(request.getParameter("passo"));
+Passos p = new Passos();
 %>
 
 <aside class="span3">
@@ -15,14 +17,14 @@ Integer passo  = Integer.parseInt(request.getParameter("passo"));
             <div class="control-group">
                 <label class="control-label"><h6><b>Rebanho com atividade de Cria:</b>
                 
-                    <span id="a"></span>
+                    <span id="a"><%=p.percentualcria()%></span>
                     <span class="help-inline">%</span>
                 </h6>
             </div>
             <div class="control-group">
                 <label class="control-label"><h6><b>Lotação Média da Propriedade:</b>
                 
-                    <span id="b"></span>
+                    <span id="b"><%=p.lotacaomedia()%></span>
                     <span class="help-inline">Cabeça(s) por hectare</span>
                     </h6>
             </div>
@@ -35,7 +37,7 @@ Integer passo  = Integer.parseInt(request.getParameter("passo"));
             <div class="control-group">
                 <label class="control-label"><h6><b>Receita por Hectare:</b>
                 
-                    <span id="c">000.00</span>
+                    <span id="c"><%=p.receitahectar()%></span>
                     <span class="help-inline">R$/Hectare</span>
                     </h6>
             </div>
@@ -48,21 +50,21 @@ Integer passo  = Integer.parseInt(request.getParameter("passo"));
             <div class="control-group">
                 <label class="control-label"><h6><b>Total dos Custos de Produção:</b>
                 
-                    <span id="d">000.00</span>
+                    <span id="d"><%=p.totalcustoproducao()%></span>
                     <span class="help-inline">R$</span>
                     </h6>
             </div>
             <div class="control-group">
                 <label class="control-label"><h6><b>Custo de Atividade de Cria:</b>
                 
-                    <span id="e">000.00</span>
+                    <span id="e"><%=p.custocria()%></span>
                     <span class="help-inline">R$</span>
                 </h6>
             </div>
             <div class="control-group">
                 <label class="control-label"><h6><b>Custo de Produção por Hectar:</b>
               
-                    <span id="f">000.00</span>
+                    <span id="f"><%=p.custohectar()%></span>
                     <span class="help-inline">R$/Hectare</span>
              </h6>
             </div>

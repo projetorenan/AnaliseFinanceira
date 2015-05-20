@@ -4,7 +4,20 @@
     Author     : Aluno
 --%>
 
+<%@page import="modelo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+Usuario u = new Usuario();
+   
+if(session.getAttribute("Usuario")!=null)
+{
+    u = (Usuario)session.getAttribute("Usuario");
+}
+else
+{
+    response.sendRedirect("index.jsp"); 
+}   
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,7 +54,7 @@
                             <li><a></a></li>
                             <li><a></a></li>
                             <li><a></a></li>
-                            <li><a href="InicioUsuario.jsp"> Usuario </a></li>
+                            <li><a href="index.jsp"><%=u.getLogin()%></a></li>
                             <li><a href="Lv1-Passo1.jsp"> Nivel 1 </a></li>
                             <li><a href=""> Nivel 2 </a></li>
                             <li><a href=""> Nivel 3 </a></li>
@@ -56,30 +69,28 @@
         <br/>
         <div class="container-fluid">
             <div class="row-fluid"> 
-                <aside class="span4"></aside>
-                <aside class="span8"><h1>Escolha um Nivel</h1><br/><br/></aside>
+                <aside class="span3"></aside>
+                <aside class="span9"><h1>Escolha o Nivel que Desejar</h1><br/><br/></aside>
             </div>
         </div>
-        <br/><br/><br/>
+        <br/><br/>
 
         <div class="container-fluid">
             <div class="row-fluid">
 
-                <aside class="span2">
+                <aside class="span4">
                 </aside>
 
-                <aside class="span8">
-                    <table class="table table-bordered table-hover">
-                        <tr class="info">
-                            <td><a href="Lv1-Passo1.jsp"> Nivel 1 </a></td>
-                            <td><a href="Lv2-Passo1.jsp"> Nivel 2 </a></td>
-                            <td><a href=""> Nivel 3 </a></td>
-                            <td><a href=""> Nivel 4 </a></td>
-                        </tr>
-                    </table>
+                <aside class="span4">
+                    <div class="control-group" >
+                        <a class="btn btn-inverse btn-large" href="Lv1-Passo1.jsp" > Nivel 1 </a>
+                        <a class="btn btn-inverse btn-large" href="Lv2-Passo1.jsp" > Nivel 2 </a>
+                        <a class="btn btn-inverse btn-large" href="" > Nivel 3 </a>
+                        <a class="btn btn-inverse btn-large" href="" > Nivel 4 </a>
+                    </div>
                 </aside>
                 
-                <aside class="span2">
+                <aside class="span4">
                 </aside>
 
             </div><h2></h2>

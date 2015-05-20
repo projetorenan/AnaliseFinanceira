@@ -41,7 +41,7 @@
                             <li><a></a></li>
                             <li><a></a></li>
                             <li><a></a></li>
-                            <li><a href="InicioUsuario.jsp"> Usuario </a></li>
+                            <li><a href="index.jsp"> Usuario </a></li>
                             <li><a href="Lv1-Passo1.jsp"> Nivel 1 </a></li>
                             <li><a href=""> Nivel 2 </a></li>
                             <li><a href=""> Nivel 3 </a></li>

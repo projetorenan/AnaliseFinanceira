@@ -22,7 +22,7 @@ if(session.getAttribute("Usuario")!=null)
 }
 else
 {
-    response.sendRedirect("InicioUsuario.jsp"); 
+    response.sendRedirect("index.jsp"); 
 }
     
 %>
