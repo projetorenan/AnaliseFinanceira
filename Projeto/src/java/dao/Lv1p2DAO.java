@@ -35,34 +35,61 @@ public class Lv1p2DAO {
         return retorno;
         
     }
-    
-     public Boolean inserir (Lv1p2 lv1p2)
+    public Boolean inserirNao (Lv1p2 lv1p2)
              
     {
         
         Boolean retorno = false;
         //Mostra o sql de insert da tabela
-        String sql = "INSERT INTO lv1p2(lota_pro, usuario_id, vaca_de_cria, vaca_de_descarte, terneiro," +
+        String sql = "INSERT INTO lv1p2(usuario_id, vaca_de_cria, vaca_de_descarte, terneiro," +
 "            terneira, novilho_13a24, novilha_13a24, novilho_25a36, novilha_25a36," +
-"            novilho_36, touro, rebanho_de_cria)" +
-"    VALUES (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?,?, ?, ?);";
+"            novilho_36, touro)" +
+"    VALUES (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?,?);";
+        //Prepara a conexão
+        PreparedStatement pst = Conexao.getPreparedStatement(sql);
+        
+       try{ 
+        pst.setInt(1, lv1p2.getUsuario_id());
+        pst.setInt(2, lv1p2.getVacadecria());
+        pst.setInt(3, lv1p2.getVacadedescarte());
+        pst.setInt(4, lv1p2.getTerneiro());
+        pst.setInt(5, lv1p2.getTerneira());
+        pst.setInt(6, lv1p2.getNovilho1324());
+        pst.setInt(7, lv1p2.getNovilha1324());
+        pst.setInt(8, lv1p2.getNovilho2536());
+        pst.setInt(9,lv1p2.getNovilha2536());
+        pst.setInt(10,lv1p2.getNovilho36());
+        pst.setInt(11,lv1p2.getTouro());;
+        //Executa o sql no bancod de dados
+        pst.executeUpdate();
+                retorno = true;
+       }
+       
+       catch(Exception ex)
+       {
+           ex.printStackTrace();
+           retorno = false;
+       }
+        
+       return retorno;
+ 
+    }
+    
+     public Boolean inserirSim (Lv1p2 lv1p2)
+             
+    {
+        
+        Boolean retorno = false;
+        //Mostra o sql de insert da tabela
+        String sql = "INSERT INTO lv1p2(lota_pro, usuario_id, rebanho_de_cria)" +
+"    VALUES (?, ?, ?);";
         //Prepara a conexão
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
         
        try{ 
         pst.setDouble(1, lv1p2.getLota_pro());
         pst.setInt(2, lv1p2.getUsuario_id());
-        pst.setInt(3, lv1p2.getVacadecria());
-        pst.setInt(4, lv1p2.getVacadedescarte());
-        pst.setInt(5, lv1p2.getTerneiro());
-        pst.setInt(6, lv1p2.getTerneira());
-        pst.setInt(7, lv1p2.getNovilho1324());
-        pst.setInt(8, lv1p2.getNovilha1324());
-        pst.setInt(9, lv1p2.getNovilho2536());
-        pst.setInt(10,lv1p2.getNovilha2536());
-        pst.setInt(11,lv1p2.getNovilho36());
-        pst.setInt(12,lv1p2.getTouro());
-        pst.setInt(14,lv1p2.getRebanhodecria());
+        pst.setInt(3,lv1p2.getRebanhodecria());
         //Executa o sql no bancod de dados
         pst.executeUpdate();
                 retorno = true;

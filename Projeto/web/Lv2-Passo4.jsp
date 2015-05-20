@@ -61,6 +61,8 @@ else
         c.setTouroquant(Integer.parseInt(request.getParameter("touros1")));
         c.setTourovalor(Double.parseDouble(request.getParameter("touros2")));
 
+        c.setUsuarioid(u.getId());
+        
         Lv2p3DAO dao = new Lv2p3DAO();
         dao.inserir(c);
         p.setLv2p3(c);
@@ -173,7 +175,7 @@ else
                         <div class="control-group">
                             <label class="control-label">Rações:</label>
                 		<div class="controls">
-                			<input type="text" name="raçoes"  placeholder="Valor em R$(ANO)">
+                			<input type="text" name="racoes"  placeholder="Valor em R$(ANO)">
                 		</div>
                         </div>
                         <div class="control-group">

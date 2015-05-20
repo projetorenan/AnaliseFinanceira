@@ -25,11 +25,13 @@ else
     
 %>
 <%
-        Lv2p4 d = new Lv2p4();
+        
+        Lv2p4 d = new Lv2p4(); 
+        
         d.setMedicamento(Double.parseDouble(request.getParameter("medicamentos")));
         d.setCarrapaticida(Double.parseDouble(request.getParameter("carrapaticidas")));
         d.setSal(Double.parseDouble(request.getParameter("sal")));
-        d.setRacao(Double.parseDouble(request.getParameter("raçoes")));
+        d.setRacao(Double.parseDouble(request.getParameter("racoes")));
         d.setCompradebovinos(Double.parseDouble(request.getParameter("comprabovinos")));
         d.setUntesilosdeusogeral(Double.parseDouble(request.getParameter("utensilios")));
         d.setSemem(Double.parseDouble(request.getParameter("semen")));
@@ -46,7 +48,8 @@ else
         d.setArrendamentopastagemcultivada(Double.parseDouble(request.getParameter("arrendamentoscultivadas")));
         d.setImposto(Double.parseDouble(request.getParameter("impostos")));
         d.setOutradespesas(Double.parseDouble(request.getParameter("outras")));
-
+        d.setUssuraioid(u.getId());
+        
         Lv2p4DAO dao = new Lv2p4DAO();
         dao.inserir(d);
         p.setLv2p4(d);

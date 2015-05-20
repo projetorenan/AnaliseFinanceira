@@ -40,7 +40,7 @@ else
         a.setMatasnativas(Double.parseDouble(request.getParameter("matasnativas")));
         a.setSea(Double.parseDouble(request.getParameter("sea")));
         a.setInaproveitavel(Double.parseDouble(request.getParameter("inaproveitavel")));
-        
+        a.setUsuarioid(u.getId());
 
         Lv2p1DAO dao = new Lv2p1DAO();
         dao.inserir(a);

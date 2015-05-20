@@ -31,11 +31,15 @@ else
 <%    
    
     Lv1p2 e = new Lv1p2();
+    Lv1p2DAO dao = new Lv1p2DAO();
+    
+    e.setUsuario_id(u.getId());
     
     if(request.getParameter("saberquantibov").equals("false"))
     {    
     e.setLota_pro(Double.parseDouble(request.getParameter("bovinos")));
     e.setRebanhodecria(Integer.parseInt(request.getParameter("bovinoscria")));
+    dao.inserirSim(e);
     }
     else
     {
@@ -48,11 +52,9 @@ else
     e.setNovilha2536(Integer.parseInt(request.getParameter("novilhas2")));
     e.setNovilho36(Integer.parseInt(request.getParameter("novilhos3")));
     e.setTouro(Integer.parseInt(request.getParameter("touros")));
+    dao.inserirNao(e);
     }
-    e.setUsuario_id(u.getId());
-
-    Lv1p2DAO dao = new Lv1p2DAO();
-    dao.inserir(e);
+    
     p.setLv1p2(e);
 
 %>

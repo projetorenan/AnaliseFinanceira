@@ -78,6 +78,8 @@ else
         b.setTourojulset(Integer.parseInt(request.getParameter("touros3")));
         b.setTourooutdez(Integer.parseInt(request.getParameter("touros4")));
 
+        b.setUsuarioid(u.getId());
+        
         Lv2p2DAO dao = new Lv2p2DAO();
         dao.inserir(b);
         p.setLv2p2(b);

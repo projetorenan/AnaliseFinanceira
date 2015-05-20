@@ -88,7 +88,7 @@ public class Passos {
     
     
     
-    
+   //AQUI COMEÇA OS CALCULOS DO NIVEL 1 
     public Double lotacaomedia (){
         //passo1
         Double areapec = this.getLv1p1().getArea_apro();
@@ -182,6 +182,15 @@ public class Passos {
         return percentualcria / areapec;
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    //AQUI COMEÇA O CALCULOS DO NIVEL 2
     public double areamedia () {
         Double a = this.getLv2p1().getPastagemnativa();
         Double b = this.getLv2p1().getPastagemnativamelhorada();

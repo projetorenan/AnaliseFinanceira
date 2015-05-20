@@ -144,6 +144,7 @@ public class UsuarioDAO {
                 usuario.setLogin(res.getString("login"));
                 usuario.setSenha(res.getString("senha"));
                 usuario.setEmail(res.getString("email"));
+                usuario.setId(res.getInt("id"));
                 
             }
             } catch(SQLException ex){

@@ -42,17 +42,17 @@ public class Lv1p4DAO {
         
         Boolean retorno = false;
         //Mostra o sql de insert da tabela
-        String sql = "INSERT INTO lv1p1 (medicamento,mao_de_obra,maquinas,pastagem,usuario_id)" +
+        String sql = "INSERT INTO lv1p4 (medicamento,mao_de_obra,maquinas,pastagem,usuario_id)" +
                 "VALUES (?,?,?,?,?)";
         //Prepara a conexão
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
         
        try{ 
         pst.setDouble(1, lv1p4.getMadicamento());
-        pst.setDouble(1, lv1p4.getMao_de_obra());
-        pst.setDouble(1, lv1p4.getMaquinas());
-        pst.setDouble(1, lv1p4.getPastagem());
-        pst.setInt(2, lv1p4.getUsuario_id());
+        pst.setDouble(2, lv1p4.getMao_de_obra());
+        pst.setDouble(3, lv1p4.getMaquinas());
+        pst.setDouble(4, lv1p4.getPastagem());
+        pst.setInt(5, lv1p4.getUsuario_id());
         
         //Executa o sql no bancod de dados
         pst.executeUpdate();
