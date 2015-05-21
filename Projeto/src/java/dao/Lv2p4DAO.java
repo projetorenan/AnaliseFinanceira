@@ -1,4 +1,3 @@
-
 package dao;
 
 import java.sql.PreparedStatement;
@@ -10,159 +9,142 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Lv2p4;
 
-
 public class Lv2p4DAO {
-    
-    
-    public Boolean excluir(Lv2p4 lv2p4){
+
+    public Boolean excluir(Lv2p4 lv2p4) {
         Boolean retorno = false;
         String sql = "DELETE FROM lv2p4 where id=?";
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
-        try {           
-            pst.setInt(1,lv2p4.getId());
-        
-        if(pst.executeUpdate() > 0){
-            retorno = true;
-        }
-        
-        
+        try {
+            pst.setInt(1, lv2p4.getId());
+
+            if (pst.executeUpdate() > 0) {
+                retorno = true;
+            }
+
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
             retorno = false;
         }
         return retorno;
-        
+
     }
-    
-     public Boolean inserir (Lv2p4 lv2p4)
-    {
-        
+
+    public Boolean inserir(Lv2p4 lv2p4) {
+
         Boolean retorno = false;
         //Mostra o sql de insert da tabela
-        String sql = "INSERT INTO lv2p4(" +
-"            medicamento, carrapaticidas, sal, racao, compra_de_bovinos," +
-"            untensilios_de_uso_geral, semem, mao_de_obra_fixa, mao_de_obra_variavel," +
-"            semente, defensivos_agri_para_pastagem, adubos_para_pastagem," +
-"            combustivel, reparos_de_maquina, reparo_de_benfeitorias, frete," +
-"            arrendamentos_de_campo_nativo, arrendamentos_de_pastagem_cultivada," +
-"            impostos, outras_despesas, usuario_id)" +
-"    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?)"; 
-           
-             
-            
-             
-            
+        String sql = "INSERT INTO lv2p4("
+                + "            medicamento, carrapaticidas, sal, racao, compra_de_bovinos,"
+                + "            untensilios_de_uso_geral, semem, mao_de_obra_fixa, mao_de_obra_variavel,"
+                + "            semente, defensivos_agri_para_pastagem, adubos_para_pastagem,"
+                + "            combustivel, reparos_de_maquina, reparo_de_benfeitorias, frete,"
+                + "            arrendamentos_de_campo_nativo, arrendamentos_de_pastagem_cultivada,"
+                + "            impostos, outras_despesas, usuario_id)"
+                + "    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?)";
+
         //Prepara a conexão
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
-        
-       try{ 
-        pst.setDouble(1, lv2p4.getMedicamento());
-        pst.setDouble(2, lv2p4.getCarrapaticida());
-        pst.setDouble(3, lv2p4.getSal());
-        pst.setDouble(4, lv2p4.getRacao());
-        pst.setDouble(5, lv2p4.getCompradebovinos());
-        pst.setDouble(6, lv2p4.getUntesilosdeusogeral());
-        pst.setDouble(7, lv2p4.getSemem());
-        pst.setDouble(8, lv2p4.getMaodeobrafixa());
-        pst.setDouble(9, lv2p4.getMaodeobravariavel());
-        pst.setDouble(10,lv2p4.getSemem());
-        pst.setDouble(11,lv2p4.getDefensivoagriparapastagem());
-        pst.setDouble(12,lv2p4.getAdubosparapastagem());
-        pst.setDouble(13, lv2p4.getCombustivel());
-        pst.setDouble(14, lv2p4.getReparosmaquina());
-        pst.setDouble(15, lv2p4.getReparobanfeitoria());
-        pst.setDouble(16, lv2p4.getFrete());
-        pst.setDouble(17, lv2p4.getArrendamentocamponativo());
-        pst.setDouble(18, lv2p4.getArrendamentopastagemcultivada());
-        pst.setDouble(19, lv2p4.getImposto());
-        pst.setDouble(20, lv2p4.getOutradespesas());
-        pst.setInt(21, lv2p4.getUssuraioid());
-        
-        //Executa o sql no bancod de dados
-        pst.executeUpdate();
-                retorno = true;
-       }
-       
-       catch(Exception ex)
-       {
-           ex.printStackTrace();
-           retorno = false;
-       }
-        
-       return retorno;
- 
+
+        try {
+            pst.setDouble(1, lv2p4.getMedicamento());
+            pst.setDouble(2, lv2p4.getCarrapaticida());
+            pst.setDouble(3, lv2p4.getSal());
+            pst.setDouble(4, lv2p4.getRacao());
+            pst.setDouble(5, lv2p4.getCompradebovinos());
+            pst.setDouble(6, lv2p4.getUntesilosdeusogeral());
+            pst.setDouble(7, lv2p4.getSemem());
+            pst.setDouble(8, lv2p4.getMaodeobrafixa());
+            pst.setDouble(9, lv2p4.getMaodeobravariavel());
+            pst.setDouble(10, lv2p4.getSemem());
+            pst.setDouble(11, lv2p4.getDefensivoagriparapastagem());
+            pst.setDouble(12, lv2p4.getAdubosparapastagem());
+            pst.setDouble(13, lv2p4.getCombustivel());
+            pst.setDouble(14, lv2p4.getReparosmaquina());
+            pst.setDouble(15, lv2p4.getReparobanfeitoria());
+            pst.setDouble(16, lv2p4.getFrete());
+            pst.setDouble(17, lv2p4.getArrendamentocamponativo());
+            pst.setDouble(18, lv2p4.getArrendamentopastagemcultivada());
+            pst.setDouble(19, lv2p4.getImposto());
+            pst.setDouble(20, lv2p4.getOutradespesas());
+            pst.setInt(21, lv2p4.getUssuraioid());
+
+            //Executa o sql no bancod de dados
+            pst.executeUpdate();
+            retorno = true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            retorno = false;
+        }
+
+        return retorno;
+
     }
-    
-     
-     public Boolean atualizar(Lv2p4 lv2p4){
+
+    public Boolean atualizar(Lv2p4 lv2p4) {
         Boolean retorno = false;
-        String sql = "UPDATE lv2p4 SET " +
-"    medicamento=?, carrapaticidas=?, sal=?, racao=?, compra_de_bovinos=?, " +
-"       untensilios_de_uso_geral=?, semem=?, mao_de_obra_fixa=?, mao_de_obra_variavel=?," +
-"       semente=?, defensivos_agri_para_pastagem=?, adubos_para_pastagem=?," +
-"       combustivel=?, reparos_de_maquina=?, reparo_de_benfeitorias=?, " +
-"       frete=?, arrendamentos_de_campo_nativo=?, arrendamentos_de_pastagem_cultivada=?," +
-"       impostos=?, outras_despesas=?, usuario_id=?" +
-" WHERE  id=?";
+        String sql = "UPDATE lv2p4\n"
+                   + "SET medicamento=?, carrapaticidas=?, sal=?, racao=?, compra_de_bovinos=?, \n"
+                       + "untensilios_de_uso_geral=?, semem=?, mao_de_obra_fixa=?, mao_de_obra_variavel=?, \n"
+                       + "semente=?, defensivos_agri_para_pastagem=?, adubos_para_pastagem=?, \n"
+                       + "combustivel=?, reparos_de_maquina=?, reparo_de_benfeitorias=?, \n"
+                       + "frete=?, arrendamentos_de_campo_nativo=?, arrendamentos_de_pastagem_cultivada=?, \n"
+                       + "impostos=?, outras_despesas=? \n"
+                   + "WHERE id=?";
+        
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
         try {
-            
-            
-        pst.setDouble(1, lv2p4.getMedicamento());
-        pst.setDouble(2, lv2p4.getCarrapaticida());
-        pst.setDouble(3, lv2p4.getSal());
-        pst.setDouble(4, lv2p4.getRacao());
-        pst.setDouble(5, lv2p4.getCompradebovinos());
-        pst.setDouble(6, lv2p4.getUntesilosdeusogeral());
-        pst.setDouble(7, lv2p4.getSemem());
-        pst.setDouble(8, lv2p4.getMaodeobrafixa());
-        pst.setDouble(9, lv2p4.getMaodeobravariavel());
-        pst.setDouble(10,lv2p4.getSemem());
-        pst.setDouble(11,lv2p4.getDefensivoagriparapastagem());
-        pst.setDouble(12,lv2p4.getAdubosparapastagem());
-        pst.setDouble(13, lv2p4.getCombustivel());
-        pst.setDouble(14, lv2p4.getReparosmaquina());
-        pst.setDouble(15, lv2p4.getReparobanfeitoria());
-        pst.setDouble(16, lv2p4.getFrete());
-        pst.setDouble(17, lv2p4.getArrendamentocamponativo());
-        pst.setDouble(18, lv2p4.getArrendamentopastagemcultivada());
-        pst.setDouble(19, lv2p4.getImposto());
-        pst.setDouble(20, lv2p4.getOutradespesas());
-        pst.setInt(21, lv2p4.getUssuraioid());
-        pst.setInt(22, lv2p4.getId());
-        
-        if(pst.executeUpdate() > 0){
-            retorno = true;
-        }
-        
-        
+
+            pst.setDouble(1, lv2p4.getMedicamento());
+            pst.setDouble(2, lv2p4.getCarrapaticida());
+            pst.setDouble(3, lv2p4.getSal());
+            pst.setDouble(4, lv2p4.getRacao());
+            pst.setDouble(5, lv2p4.getCompradebovinos());
+            pst.setDouble(6, lv2p4.getUntesilosdeusogeral());
+            pst.setDouble(7, lv2p4.getSemem());
+            pst.setDouble(8, lv2p4.getMaodeobrafixa());
+            pst.setDouble(9, lv2p4.getMaodeobravariavel());
+            pst.setDouble(10, lv2p4.getSemem());
+            pst.setDouble(11, lv2p4.getDefensivoagriparapastagem());
+            pst.setDouble(12, lv2p4.getAdubosparapastagem());
+            pst.setDouble(13, lv2p4.getCombustivel());
+            pst.setDouble(14, lv2p4.getReparosmaquina());
+            pst.setDouble(15, lv2p4.getReparobanfeitoria());
+            pst.setDouble(16, lv2p4.getFrete());
+            pst.setDouble(17, lv2p4.getArrendamentocamponativo());
+            pst.setDouble(18, lv2p4.getArrendamentopastagemcultivada());
+            pst.setDouble(19, lv2p4.getImposto());
+            pst.setDouble(20, lv2p4.getOutradespesas());
+            pst.setInt(21, lv2p4.getUssuraioid());
+            pst.setInt(22, lv2p4.getId());
+
+            if (pst.executeUpdate() > 0) {
+                retorno = true;
+            }
+
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(Lv1p1DAO.class.getName()).log(Level.SEVERE, null, ex);
             retorno = false;
         }
         return retorno;
-        
+
     }
-     
-      public List<Lv2p4> listar()
-    {
-        
+
+    public List<Lv2p4> listar() {
+
         //crio a lista de jogadores
-        
         List<Lv2p4> lista = new ArrayList<Lv2p4>();
         String sql = "SELECT * FROM lv2p4";
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
-        
+
         try {
             //Executo o aql e jogo em um resultSet
             ResultSet res = pst.executeQuery();
             //Eqaunto tiver REGISTRO eu vou relacionar
             //com a minha classe Jogador e adicionar na lista 
-            while(res.next())
-            {
+            while (res.next()) {
                 Lv2p4 lv2p4 = new Lv2p4();
-                
-                
+
                 lv2p4.setMedicamento(res.getDouble("medicamento"));
                 lv2p4.setCarrapaticida(res.getDouble("carrapaticidas"));
                 lv2p4.setSal(res.getDouble("sal"));
@@ -184,14 +166,13 @@ public class Lv2p4DAO {
                 lv2p4.setImposto(res.getDouble("impostos"));
                 lv2p4.setOutradespesas(res.getDouble("outras_despesas"));
                 lv2p4.setUssuraioid(res.getInt("usuario_id"));
-                
 
                 lista.add(lv2p4);
             }
-            } catch(SQLException ex){
-               
-               ex.printStackTrace();
-            }
-        return lista;
+        } catch (SQLException ex) {
+
+            ex.printStackTrace();
         }
+        return lista;
+    }
 }

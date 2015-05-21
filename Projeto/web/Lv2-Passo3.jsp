@@ -11,6 +11,9 @@
 <%@page import="dao.Lv2p3DAO"%>
 <%@page import="modelo.Lv2p3"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
+
 <%
     Usuario u = new Usuario();
     Passos p = new Passos();

@@ -1,4 +1,3 @@
-
 package dao;
 
 import java.sql.PreparedStatement;
@@ -15,84 +14,77 @@ import modelo.Lv2p1;
  * @author Lucas
  */
 public class Lv2p1DAO {
-    public Boolean inserir (Lv2p1 lv2p1)
-    {
-        
+
+    public Boolean inserir(Lv2p1 lv2p1) {
+
         Boolean retorno = false;
         //Mostra o sql de insert da tabela
         String sql = "INSERT INTO lv2p1 (pastagem_nativa,pastagem_nativa_melhorada,pastagem_cultivada_perene,"
                 + "pastagem_anuais_de_inverno,pastagem_anuais_de_verao,agricultura_i,agricultura_v,"
-                + "florestas_plantadas,outras_culturas,matas_nativas,sea,inaproveitavel,usuario_id)" +
-                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                + "florestas_plantadas,outras_culturas,matas_nativas,sea,inaproveitavel,usuario_id)"
+                + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
         //Prepara a conexão
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
-        
-       try{ 
-        pst.setDouble(1, lv2p1.getPastagemnativa());
-        pst.setDouble(2, lv2p1.getPastagemnativamelhorada());
-        pst.setDouble(3, lv2p1.getPastagemcultivadaperene());
-        pst.setDouble(4, lv2p1.getPastagemanuaisdeinverno());
-        pst.setDouble(5, lv2p1.getPastagemanuaisdeverao());
-        pst.setDouble(6, lv2p1.getAgriculturai());
-        pst.setDouble(7, lv2p1.getAgriculturav());
-        pst.setDouble(8, lv2p1.getFlorestaplantadas());
-        pst.setDouble(9, lv2p1.getOutrasplantadas());
-        pst.setDouble(10,lv2p1.getMatasnativas());
-        pst.setDouble(11,lv2p1.getSea());
-        pst.setDouble(12,lv2p1.getInaproveitavel());
-        pst.setInt(13, lv2p1.getUsuarioid());
-        
-        //Executa o sql no bancod de dados
-        pst.executeUpdate();
-                retorno = true;
-       }
-       
-       catch(Exception ex)
-       {
-           ex.printStackTrace();
-           retorno = false;
-       }
-        
-       return retorno;
- 
+
+        try {
+            pst.setDouble(1, lv2p1.getPastagemnativa());
+            pst.setDouble(2, lv2p1.getPastagemnativamelhorada());
+            pst.setDouble(3, lv2p1.getPastagemcultivadaperene());
+            pst.setDouble(4, lv2p1.getPastagemanuaisdeinverno());
+            pst.setDouble(5, lv2p1.getPastagemanuaisdeverao());
+            pst.setDouble(6, lv2p1.getAgriculturai());
+            pst.setDouble(7, lv2p1.getAgriculturav());
+            pst.setDouble(8, lv2p1.getFlorestaplantadas());
+            pst.setDouble(9, lv2p1.getOutrasplantadas());
+            pst.setDouble(10, lv2p1.getMatasnativas());
+            pst.setDouble(11, lv2p1.getSea());
+            pst.setDouble(12, lv2p1.getInaproveitavel());
+            pst.setInt(13, lv2p1.getUsuarioid());
+
+            //Executa o sql no bancod de dados
+            pst.executeUpdate();
+            retorno = true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            retorno = false;
+        }
+
+        return retorno;
+
     }
-    
-    public Boolean excluir(Lv2p1 lv2p1){
+
+    public Boolean excluir(Lv2p1 lv2p1) {
         Boolean retorno = false;
         String sql = "DELETE FROM lv2p1 where id=?";
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
-        try {           
-            pst.setInt(1,lv2p1.getId());
-        
-        if(pst.executeUpdate() > 0){
-            retorno = true;
-        }
-        
-        
+        try {
+            pst.setInt(1, lv2p1.getId());
+
+            if (pst.executeUpdate() > 0) {
+                retorno = true;
+            }
+
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
             retorno = false;
         }
         return retorno;
-        
+
     }
-    
-     public List<Lv2p1> listar()
-    {
-        
+
+    public List<Lv2p1> listar() {
+
         //crio a lista de jogadores
-        
         List<Lv2p1> lista = new ArrayList<Lv2p1>();
         String sql = "SELECT * FROM lv2p1";
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
-        
+
         try {
             //Executo o aql e jogo em um resultSet
             ResultSet res = pst.executeQuery();
             //Eqaunto tiver REGISTRO eu vou relacionar
             //com a minha classe Jogador e adicionar na lista 
-            while(res.next())
-            {
+            while (res.next()) {
                 Lv2p1 lv2p1 = new Lv2p1();
                 lv2p1.setPastagemnativa(res.getDouble("pastagem_nativa"));
                 lv2p1.setPastagemnativamelhorada(res.getDouble("pastagem_nativa_melhorada"));
@@ -106,53 +98,52 @@ public class Lv2p1DAO {
                 lv2p1.setMatasnativas(res.getDouble("matas_nativas"));
                 lv2p1.setSea(res.getDouble("sea"));
                 lv2p1.setInaproveitavel(res.getDouble("inaproveitavel"));
-                lv2p1.setUsuarioid(res.getInt("usuario_id"));                
+                lv2p1.setUsuarioid(res.getInt("usuario_id"));
                 lista.add(lv2p1);
             }
-            } catch(SQLException ex){
-               
-               ex.printStackTrace();
-            }
-        return lista;
+        } catch (SQLException ex) {
+
+            ex.printStackTrace();
         }
-     
-     
-       public Boolean atualizar(Lv2p1 lv2p1){
+        return lista;
+    }
+
+    public Boolean atualizar(Lv2p1 lv2p1) {
         Boolean retorno = false;
-        String sql = "UPDATE lv2p1 SET pastagem_nativa = ?,pastagem_nativa_melhorada=?,pastagem_cultivada_perene=?,"
-                + "pastagem_anuais_de_inverno=?,pastagem_anuais_de_verao=?,agricultura_i=?,agricultura_v=?"
-                + "florestas_plantadas=?,outras_culturas=?,matas_nativas=?,sea=?,inaproveitavel=?,usuario_id=? WHERE id=?";
+        String sql = "UPDATE lv2p1\n"
+                   + "SET pastagem_nativa=?, pastagem_nativa_melhorada=?, pastagem_cultivada_perene=?, \n"
+                       + "pastagem_anuais_de_inverno=?, pastagem_anuais_de_verao=?, agricultura_i=?, \n"
+                       + "agricultura_v=?, florestas_plantadas=?, outras_culturas=?, matas_nativas=?, \n"
+                       + "sea=?, inaproveitavel=? \n"
+                   + "WHERE id=?";
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
         try {
-            
-            
-        pst.setDouble(1, lv2p1.getPastagemnativa());
-        pst.setDouble(2, lv2p1.getPastagemnativamelhorada());
-        pst.setDouble(3, lv2p1.getPastagemcultivadaperene());
-        pst.setDouble(4, lv2p1.getPastagemanuaisdeinverno());
-        pst.setDouble(5, lv2p1.getPastagemanuaisdeverao());
-        pst.setDouble(6, lv2p1.getAgriculturai());
-        pst.setDouble(7, lv2p1.getAgriculturav());
-        pst.setDouble(8, lv2p1.getFlorestaplantadas());
-        pst.setDouble(9, lv2p1.getOutrasplantadas());
-        pst.setDouble(10,lv2p1.getMatasnativas());
-        pst.setDouble(11,lv2p1.getSea());
-        pst.setDouble(12,lv2p1.getInaproveitavel());
-        pst.setInt(13, lv2p1.getUsuarioid());
-        pst.setInt(14, lv2p1.getId());
-        
-        if(pst.executeUpdate() > 0){
-            retorno = true;
-        }
-        
-        
+
+            pst.setDouble(1, lv2p1.getPastagemnativa());
+            pst.setDouble(2, lv2p1.getPastagemnativamelhorada());
+            pst.setDouble(3, lv2p1.getPastagemcultivadaperene());
+            pst.setDouble(4, lv2p1.getPastagemanuaisdeinverno());
+            pst.setDouble(5, lv2p1.getPastagemanuaisdeverao());
+            pst.setDouble(6, lv2p1.getAgriculturai());
+            pst.setDouble(7, lv2p1.getAgriculturav());
+            pst.setDouble(8, lv2p1.getFlorestaplantadas());
+            pst.setDouble(9, lv2p1.getOutrasplantadas());
+            pst.setDouble(10, lv2p1.getMatasnativas());
+            pst.setDouble(11, lv2p1.getSea());
+            pst.setDouble(12, lv2p1.getInaproveitavel());
+            pst.setInt(13, lv2p1.getUsuarioid());
+            pst.setInt(14, lv2p1.getId());
+
+            if (pst.executeUpdate() > 0) {
+                retorno = true;
+            }
+
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(Lv1p1DAO.class.getName()).log(Level.SEVERE, null, ex);
             retorno = false;
         }
         return retorno;
-        
+
     }
-       
-       
+
 }
